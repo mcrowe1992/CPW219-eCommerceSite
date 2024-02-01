@@ -1,31 +1,33 @@
 # eCommerce Website
 
-This is a paragraph.
+### 🕹️ Welcome to Apox Gaming 🕹️
 
-Another sentence.
-Another one
-here
-
-## Prerequisites
-- Item 1
-- Item 2
-- Item 3
+Here we strive to provide our customers with products to suit all of their gaming needs. 
 
 ## Getting Started
-- Item 1
-- Item 2
-- Item 3
+***Prerequisites***
+- Your computer must be running Windows 10/11, most recent build
+- A current version of your preffered internet browser
+- Internet connection
 
 ## Features
-- Item 1
-- Item 2
-- Item 3
+- Up to date shop with current console games
+- Console accessories
 
 ## Roadmap
-#### Features to be implemented in the future
+***Features to be implemented in the future***
 
-- Item 1
-- Item 2
-- Item 3
+- Forum for users to share progress/clips, provide walkthrough guides, and also discuss playthroughs 
+- Implementing pc game titles 
+- PC gaming accesories
+- Tabletop/tcg games
 
-*** I will be continuing to update this throughout this upcoming week. I simply made a quick format for me to follow later when im ready to update my readme. ***
+
+
+### This project is being developed through the use of ASP.NET MVC using Visual Studio 2022
+- https://dotnet.microsoft.com/en-us/apps/aspnet/mvc
+- https://www.codecademy.com/article/what-is-crud
+- https://learn.microsoft.com/en-us/ef/core/
+- https://devblogs.microsoft.com/dotnet/announcing-dotnet-8/
+
+**I will be continuing to update this readme _throughout_ the development of this site** 👋 
