@@ -6,9 +6,8 @@ Here we strive to provide our customers with products to suit all of their gamin
 
 ## Getting Started
 ***Prerequisites***
-- Your computer must be running Windows 10/11, most recent build
-- A current version of your preffered internet browser
-- Internet connection
+- .NET 8 SDK
+- Visual Studio 2022 w/ ASP.NET and Web Development Workload
 
 ## Features
 - Up to date shop with current console games
