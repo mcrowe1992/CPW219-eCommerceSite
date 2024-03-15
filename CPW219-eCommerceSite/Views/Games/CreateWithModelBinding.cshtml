@@ -3,6 +3,13 @@
 	ViewData["Title"] = "Shop Games";
 }
 
+@if (ViewData["Message"] != null)
+{
+	<div class="alert alert-success">
+		@ViewData["Message"]
+	</div>
+}
+
 <h2>Add a game here</h2>
 
 <form method="post">
