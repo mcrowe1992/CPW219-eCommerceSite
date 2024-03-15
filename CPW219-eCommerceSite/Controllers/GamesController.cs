@@ -5,27 +5,23 @@ namespace CPW219_eCommerceSite.Controllers
 {
     public class GamesController : Controller
     {
-        // GET: /Games/Create
+        
+
         [HttpGet]
-        public IActionResult Create()
-        {
-            return View();
+        public IActionResult CreateWithModelBinding() 
+        { 
+            return View(); 
         }
 
-        [HttpPost] // This action is hit after the user submits form data
-        public IActionResult Create(IFormCollection formData) 
-        {
-            Games g = new()
+        [HttpPost]
+        public IActionResult CreateWithModelBinding(Games g)
+        {  
+            if (ModelState.IsValid)
             {
+                return RedirectToAction("Index", "Home");
+            }
 
-            };
-
-            // Validate all data
-
-            // Add to database
-
-            // Return a view
-            return RedirectToAction("Index", "Home");
+            return View(g);
         }
     }
 }
