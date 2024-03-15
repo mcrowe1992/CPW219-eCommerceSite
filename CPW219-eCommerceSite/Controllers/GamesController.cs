@@ -21,12 +21,12 @@ namespace CPW219_eCommerceSite.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateWithModelBinding(Games g)
+        public async Task<IActionResult> CreateWithModelBinding(Games g)
         {  
             if (ModelState.IsValid)
             {
                 _context.Game.Add(g); //Prepares insert
-                _context.SaveChanges(); //Executes pending insert
+                await _context.SaveChangesAsync(); //Executes pending insert
 
                 ViewData["Message"] = $"{g.Title} was added successfully!";
                 return View();
