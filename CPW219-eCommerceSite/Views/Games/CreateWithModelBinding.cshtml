@@ -1,0 +1,29 @@
+﻿@model Games 
+@{
+	ViewData["Title"] = "Shop Games";
+}
+
+<h2>Add a game here</h2>
+
+<form method="post">
+	<label asp-for="Title"></label>
+	<input asp-for="Title" />
+	<span asp-validation-for="Title"></span>
+	<br />
+
+	<label asp-for="Price"></label>
+	<input asp-for="Price" />
+	<span asp-validation-for="Price"></span>
+	<br />
+
+	<label asp-for="Quantity"></label>
+	<input asp-for="Quantity" />
+	<span asp-validation-for="Quantity"></span>
+	<br />
+
+	<input type="submit" value="Add Game" />
+</form>
+
+@section Scripts{
+	<partial name="_ValidationScriptsPartial" />
+}
