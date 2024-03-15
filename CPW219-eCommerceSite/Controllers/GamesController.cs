@@ -102,5 +102,17 @@ namespace CPW219_eCommerceSite.Controllers
             return RedirectToAction("Index");
         }
 
+        public async Task<IActionResult> Details(int id)
+        {
+            Games? gamesDetails = await _context.Game.FindAsync(id);
+
+            if (gamesDetails == null) 
+            {
+                return NotFound();
+            }
+
+            return View(gamesDetails);
+        }
+
     }
 }

@@ -1,12 +1,11 @@
-﻿@model Games
+﻿@model .Games
 
 @{
-    ViewData["Title"] = "Delete " + Model.Title;
+    ViewData["Title"] = "Details for " + Model.Title;
 }
 
-<h1>Delete: @Model.Title</h1>
+<h1>Details: @Model.Title</h1>
 
-<h3>Are you sure you want to delete this?</h3>
 <div>
     <hr />
     <dl class="row">
@@ -35,9 +34,7 @@
             @Html.DisplayFor(model => model.Quantity)
         </dd>
     </dl>
-    
-    <form asp-action="Delete">
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
 </div>
