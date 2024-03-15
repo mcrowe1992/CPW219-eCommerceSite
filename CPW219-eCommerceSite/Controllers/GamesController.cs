@@ -14,6 +14,16 @@ namespace CPW219_eCommerceSite.Controllers
 			_context = context;
 		}
 
+        public IActionResult Index()
+        {
+            // Get all games form the DB
+            List<Games> game = _context.Game.ToList();
+
+            // Show them on the page
+
+            return View(game);
+        }
+
 		[HttpGet]
         public IActionResult CreateWithModelBinding() 
         { 
