@@ -44,5 +44,34 @@ namespace CPW219_eCommerceSite.Controllers
 
             return View(g);
         }
+
+
+        public async Task<IActionResult> Edit(int id) 
+        {
+            Games? gamesToEdit = await _context.Game.FindAsync(id);
+
+            if (gamesToEdit == null)
+            {
+                return NotFound();
+            }
+
+            return View(gamesToEdit);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(Games gamesModel)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Game.Update(gamesModel);
+                await _context.SaveChangesAsync();
+
+                TempData["Message"] = $"{gamesModel.Title} was updated successfully!";  
+                return RedirectToAction("Index");
+            }
+
+            return View(gamesModel);    
+        }
+
     }
 }
