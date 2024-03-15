@@ -4,6 +4,9 @@ namespace CPW219_eCommerceSite.Models
 {
 	public class Games
 	{
+		[Key]
+		public int GamesId { get; set; }
+
 		[Required]
 		[Display (Name = "Title")]
 		public string Title { get; set; }
