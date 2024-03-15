@@ -11,5 +11,7 @@ namespace CPW219_eCommerceSite.Data
 		}
 
 		public DbSet<Games> Game { get; set; }
+
+		public DbSet<Member> Members { get; set; }
 	}
 }
