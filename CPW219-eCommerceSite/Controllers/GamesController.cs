@@ -58,5 +58,19 @@ namespace CPW219_eCommerceSite.Controllers
             return View(gamesToEdit);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Edit(Games gamesModel)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Game.Update(gamesModel);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction("Index");
+            }
+
+            return View(gamesModel);    
+        }
+
     }
 }
