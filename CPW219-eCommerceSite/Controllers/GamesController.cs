@@ -66,6 +66,7 @@ namespace CPW219_eCommerceSite.Controllers
                 _context.Game.Update(gamesModel);
                 await _context.SaveChangesAsync();
 
+                TempData["Message"] = $"{gamesModel.Title} was updated successfully!";  
                 return RedirectToAction("Index");
             }
 
