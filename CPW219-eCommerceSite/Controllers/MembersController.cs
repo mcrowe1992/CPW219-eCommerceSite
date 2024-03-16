@@ -35,7 +35,7 @@ namespace CPW219_eCommerceSite.Controllers
                 _context.Members.Add(newMember);
                 await _context.SaveChangesAsync();
 
-                LogUserIn(newMember.Email)
+                LogUserIn(newMember.Email);
 
                 // Redirect to home page
                 return RedirectToAction("Index", "Home");
