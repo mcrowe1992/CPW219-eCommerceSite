@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Games>
+﻿@model GameCatalogViewModel
 
 @{
     ViewData["Title"] = "Game Catalog";
@@ -17,28 +17,28 @@
 <p>
     <a asp-action="CreateWithModelBinding" asp-asp-controller="Games">Create Game</a>
 </p>
-@if (Model.Count() != 0)
+@if (Model.Games.Count != 0)
 {
     <table class="table table-striped table-hover">
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.GamesId)
+                    @Html.DisplayNameFor(model => model.Games[0].GamesId)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Title)
+                    @Html.DisplayNameFor(model => model.Games[0].Title)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Price)
+                    @Html.DisplayNameFor(model => model.Games[0].Price)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Quantity)
+                    @Html.DisplayNameFor(model => model.Games[0].Quantity)
                 </th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach (Games item in Model)
+            @foreach (Games item in Model.Games)
             {
                 <tr>
                     <td>
@@ -66,4 +66,9 @@
 else
 {
     <h2>No more games to display</h2>
+}
+
+@for (int i = 1; i <= Model.LastPage; i++)
+{
+    <p>@i</p>
 }

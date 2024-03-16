@@ -22,14 +22,21 @@ namespace CPW219_eCommerceSite.Controllers
 
             int currPage = id ?? 1; // Set currPage to id if it has a value, otherwise use 1
 
+            int totalNumOfProducts = await _context.Game.CountAsync();
+            double maxNumPages = Math.Ceiling((double)totalNumOfProducts / NumGamesToDisplayPerPage);
+            int lastPage = Convert.ToInt32(maxNumPages); // Rounding pages up, to next whole page number
+
+
+
             // Get all games from the DB
             List<Games> game = await (from Games in _context.Game
                                       select Games).Skip(NumGamesToDisplayPerPage * (currPage - PageOffset))
                                       .Take(NumGamesToDisplayPerPage)
                                       .ToListAsync();
 
-            // Show them on the page
-            return View(game);
+            GameCatalogViewModel catalogModel = new(game, lastPage, currPage);
+            return View(catalogModel);
+
         }
 
 		[HttpGet]
