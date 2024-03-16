@@ -39,13 +39,16 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Members" asp-action="Register">Register</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Members" asp-action="Login">Log in</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Members" asp-action="Login">Log In</a>
                             </li>
                         }
                         else
                         {
                             <li>
                                 <p>Hello @userEmail</p>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Members" asp-action="Logout">Log Out</a>
                             </li>
                         }
 
